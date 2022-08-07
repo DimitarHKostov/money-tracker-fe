@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: money-tracker-deployment-ui
+  namespace: <namespace>
+  labels:
+    app: money-tracker-ui
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: money-tracker-ui
+  template:
+    metadata:
+      labels:
+        app: money-tracker-ui
+    spec:
+      containers:
+      - name: money-tracker-ui
+        image: <image>
+        ports:
+        - containerPort: 80
