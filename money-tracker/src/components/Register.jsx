@@ -19,7 +19,7 @@ const Register = () => {
   };
 
   const registerUser = (e) => {
-    axios.post('http://localhost:80/api/register', {
+    axios.post('http://localhost:80/api/v1/register', {
       email: email, username: username, password:password
     })
         .then(response => console.log(response))
